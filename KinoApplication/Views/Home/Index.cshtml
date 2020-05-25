@@ -1,0 +1,13 @@
+﻿@model IEnumerable<KinoApplication.Models.Movie>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    @foreach (var item in Model)
+    {
+        <a asp-controller="Movies" asp-action="Details" asp-route-id="@item.Id"><img src="@item.Poster" asp-append-version="true"></a>
+    }
+</div>
